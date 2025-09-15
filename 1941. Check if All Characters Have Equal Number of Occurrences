@@ -1,0 +1,14 @@
+class Solution {
+  bool areOccurrencesEqual(String input) {
+   // Input validation
+  if (input.isEmpty) return true;
+  
+  final Map<String, int> charFrequency = {};
+  
+  for (int i = 0; i < input.length; i++) {
+    final String character = input[i];
+    charFrequency[character] = (charFrequency[character] ?? 0) + 1;
+  }
+  
+  return charFrequency.values.toSet().length == 1;
+}}
